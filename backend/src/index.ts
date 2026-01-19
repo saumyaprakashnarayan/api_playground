@@ -15,25 +15,32 @@ const PORT = parseInt(process.env.PORT || "3000", 10);
 import cors from "cors";
 
 const allowedOrigins = [
-  "http://localhost:5173",              // Vite dev
-  "http://localhost:3000",
-  "https://my-api-playground-lzxf.onrender.com",
-  "https://your-frontend.vercel.app"    // ⬅ ADD YOUR REAL FRONTEND URL
+  "http://localhost:5173",
+  "https://my-api-playground-sigma.vercel.app", 
+  "https://my-api-playground-lzxf.onrender.com"
 ];
 
 app.use(cors({
   origin: (origin, callback) => {
+    console.log("CORS origin:", origin);
+
+ 
     if (!origin) return callback(null, true);
 
     if (allowedOrigins.includes(origin)) {
       return callback(null, true);
     }
 
-    console.warn("Blocked by CORS:", origin);
-    return callback(null, true); // TEMP allow to avoid crash
+    
+    return callback(null, false);
   },
-  credentials: true
+  credentials: true,
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"]
 }));
+
+app.options("*", cors());
+
 
 
 app.use(express.json());
