@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import { apiRequest } from '../lib/api';
+import { API_BASE_URL } from '../config';
 import type { Profile as ProfileType } from '../types/api';
 
 const Profile = () => {
@@ -46,7 +47,7 @@ const Profile = () => {
     
     try {
       setLoading(true);
-      const response = await fetch('https://my-api-playground-lzxf.onrender.com/profile', {
+      const response = await fetch(`${API_BASE_URL}/profile`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
