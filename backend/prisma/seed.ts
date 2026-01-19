@@ -9,21 +9,21 @@ async function main() {
 
   const profile = await prisma.profile.create({
     data: {
-      name: "Vineet",
-      email: "0123vineet@gmail.com",
+      name: "Saumya Prakash Narayan",
+      email: "saumyaprakashnarayan@gmail.com",
       links: {
         create: [
           {
             type: "github",
-            url: "https://github.com/vineetj12",
+            url: "https://github.com/saumya",
           },
           {
             type: "linkedin",
-            url: "https://www.linkedin.com/in/vineet0123/",
+            url: "https://www.linkedin.com/in/saumya-prakash-narayan/",
           },
           {
             type: "portfolio",
-            url: "https://portfolio-kappa-peach-70.vercel.app/",
+            url: "https://portfolio.dev/",
           },
         ],
       },
@@ -92,7 +92,7 @@ async function main() {
     data: {
       title: "AI Interviewer",
       description:
-        "AI-powered mock interview platform that simulates real interview experiences. It dynamically generates interview questions based on the selected role and provides intelligent feedback to help users improve their answers and confidence.",
+        "AI-powered interview simulation tool generating 500+ technical and behavioral questions. Uses Gemini API to deliver personalized feedback improving interview readiness by 25%. Implemented secure authentication and session handling with 30% reduced API latency through optimization and caching.",
       work: "Personal Project",
       profileId: profile.id,
       links: {
@@ -108,27 +108,9 @@ async function main() {
 
   const sentry = await prisma.project.create({
     data: {
-      title: "Sentry – Real-Time Monitoring System",
-      description:
-        "Real-time monitoring and alerting system designed to track system events and application health. It uses WebSockets for instant updates and sends alerts via email when critical issues occur.",
-      work: "Personal Project",
-      profileId: profile.id,
-      links: {
-        create: [
-          {
-            type: "demo",
-            url: "https://sentry-steel.vercel.app/",
-          },
-        ],
-      },
-    },
-  });
-
-  const urlShortener = await prisma.project.create({
-    data: {
       title: "URL Shortener",
       description:
-        "Full-stack URL shortening platform that allows users to generate short links and efficiently redirect traffic. The system is optimized for fast redirection and high performance.",
+        "Full-stack URL platform used by 20+ users generating 150+ short links. Optimized redirection logic reducing response latency by 40%. Achieved 95+ Lighthouse score with responsive UI design. Implemented CI/CD on Vercel enabling zero-downtime deployments.",
       work: "Personal Project",
       profileId: profile.id,
       links: {
@@ -142,36 +124,36 @@ async function main() {
     },
   });
 
-  const vibeNet = await prisma.project.create({
+  const urlShortener = await prisma.project.create({
     data: {
-      title: "VibeNet",
+      title: "URL Shortener",
       description:
-        "Social networking application focused on real-time interaction and seamless user experience. It emphasizes scalability and clean backend architecture.",
-      work: "Personal Project",
-      profileId: profile.id,
-      links: {
-        create: [
-          {
-            type: "github",
-            url: "https://github.com/vineetj12/VibeNet",
-          },
-        ],
-      },
-    },
-  });
-
-  const birdGame = await prisma.project.create({
-    data: {
-      title: "Bird Game",
-      description:
-        "Browser-based interactive bird game developed using core web technologies. The project focuses on game logic, animations, and user interaction without external frameworks.",
+        "Full-stack URL platform used by 20+ users generating 150+ short links. Optimized redirection logic reducing response latency by 40%. Achieved 95+ Lighthouse score with responsive UI design. Implemented CI/CD on Vercel enabling zero-downtime deployments.",
       work: "Personal Project",
       profileId: profile.id,
       links: {
         create: [
           {
             type: "demo",
-            url: "https://vineetj12.github.io/bird/",
+            url: "https://shorturl-ten-mocha.vercel.app/",
+          },
+        ],
+      },
+    },
+  });
+
+  const cropRotation = await prisma.project.create({
+    data: {
+      title: "Crop Rotation Detection using Remote Sensing",
+      description:
+        "Machine learning-based system to analyze crop rotation patterns using multi-temporal satellite imagery. Processed and analyzed 1,000+ satellite images using vegetation indices (NDVI and EVI). Trained classification models achieving 85% accuracy in identifying crop rotation cycles. Integrated GIS-based spatial analysis for visualizing crop transitions.",
+      work: "Personal Project",
+      profileId: profile.id,
+      links: {
+        create: [
+          {
+            type: "github",
+            url: "https://github.com/saumya/crop-rotation",
           },
         ],
       },
@@ -180,11 +162,10 @@ async function main() {
 
 
   const projectSkillMap = [
-    { projectId: aiInterviewer.id, skills: ["React.js", "Node.js", "JavaScript"] },
-    { projectId: sentry.id, skills: ["Node.js", "Express.js", "WebSockets", "Prisma", "PostgreSQL"] },
+    { projectId: aiInterviewer.id, skills: ["React.js", "Node.js", "TypeScript"] },
+    { projectId: sentry.id, skills: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "Tailwind CSS"] },
     { projectId: urlShortener.id, skills: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "Tailwind CSS"] },
-    { projectId: vibeNet.id, skills: ["Node.js", "Express.js", "MongoDB", "JavaScript"] },
-    { projectId: birdGame.id, skills: ["HTML", "CSS", "JavaScript"] },
+    { projectId: cropRotation.id, skills: ["Python", "Machine Learning", "PostgreSQL"] },
   ];
 
   for (const ps of projectSkillMap) {
