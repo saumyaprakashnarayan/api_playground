@@ -51,6 +51,4 @@ A full-stack application that provides REST APIs to manage a developer profile, 
 
 ---
 
-## API Endpoints
 
-### Profile
