@@ -36,7 +36,7 @@ export const mockProjects: Project[] = [
     id: "1",
     title: "AI Interviewer",
     description: "AI-powered interview simulation tool generating 500+ technical and behavioral questions. Uses Gemini API to deliver personalized feedback improving interview readiness by 25%. Implemented secure authentication and session handling with 30% reduced API latency.",
-    link: "https://ai-interviewer-rig4xa96i-vineets-projects-ef673d72.vercel.app/",
+    link: "https://github.com/saumyaprakashnarayan/ai-interviewer",
     skills: ["React.js", "Node.js", "Gemini API", "TypeScript"]
   },
   {
