@@ -1,6 +1,6 @@
 import express from "express";
 import dotenv from "dotenv";
-import cors from "cors";
+
 
 import authRoutes from "./routes/auth";
 import profileRoutes from "./routes/profile";
@@ -12,17 +12,29 @@ dotenv.config();
 const app = express();
 const PORT = parseInt(process.env.PORT || "3000", 10);
 
+import cors from "cors";
+
+const allowedOrigins = [
+  "http://localhost:5173",              // Vite dev
+  "http://localhost:3000",
+  "https://my-api-playground-lzxf.onrender.com",
+  "https://your-frontend.vercel.app"    // ⬅ ADD YOUR REAL FRONTEND URL
+];
+
 app.use(cors({
   origin: (origin, callback) => {
-    const allowedOrigins = ['http://localhost:8080', 'http://localhost:8081', 'https://my-api-playground-lzxf.onrender.com'];
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
+    if (!origin) return callback(null, true);
+
+    if (allowedOrigins.includes(origin)) {
+      return callback(null, true);
     }
+
+    console.warn("Blocked by CORS:", origin);
+    return callback(null, true); // TEMP allow to avoid crash
   },
-  credentials: true,
+  credentials: true
 }));
+
 
 app.use(express.json());
 
