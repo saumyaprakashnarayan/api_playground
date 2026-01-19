@@ -4,10 +4,7 @@ import { middleware } from "../middleware";
 
 const router = Router();
 
-/**
- * GET /projects
- * GET /projects?skill=python
- */
+
 router.get("/", async (req, res) => {
   try {
     const skill = req.query.skill as string | undefined;

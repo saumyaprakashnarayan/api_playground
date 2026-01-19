@@ -4,9 +4,7 @@ import { middleware } from "../middleware";
 
 const router = Router();
 
-/**
- * GET /profile
- */
+
 router.get("/", async (req, res) => {
   try {
     const profile = await prisma.profile.findFirst({
@@ -25,9 +23,6 @@ router.get("/", async (req, res) => {
   }
 });
 
-/**
- * POST /profile (protected) - Create or Update profile
- */
 router.post("/", middleware, async (req, res) => {
   try {
     const { name, email } = req.body;

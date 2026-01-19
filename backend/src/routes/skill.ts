@@ -3,9 +3,7 @@ import { prisma } from "../prisma";
 
 const router = Router();
 
-/**
- * GET /skills
- */
+
 router.get("/", async (_, res) => {
   try {
     const skills = await prisma.skill.findMany();
@@ -16,9 +14,7 @@ router.get("/", async (_, res) => {
   }
 });
 
-/**
- * GET /skills/top
- */
+
 router.get("/top", async (_, res) => {
   try {
     const skills = await prisma.skill.groupBy({

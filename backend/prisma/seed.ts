@@ -6,7 +6,7 @@ import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
 async function main() {
-  // 1️⃣ Create Profile
+
   const profile = await prisma.profile.create({
     data: {
       name: "Vineet",
@@ -30,7 +30,7 @@ async function main() {
     },
   });
 
-  // 2️⃣ Education
+
   await prisma.education.create({
     data: {
       degree: "B.Tech in Computer Science and Engineering",
@@ -41,7 +41,7 @@ async function main() {
     },
   });
 
-  // 3️⃣ Skills
+
   const skills = [
     "HTML",
     "CSS",
@@ -86,7 +86,7 @@ async function main() {
     skillRecords.map((s) => [s.name, s.id])
   );
 
-  // 4️⃣ Projects
+
 
   const aiInterviewer = await prisma.project.create({
     data: {
@@ -178,7 +178,7 @@ async function main() {
     },
   });
 
-  // 5️⃣ Attach Skills to Projects
+
   const projectSkillMap = [
     { projectId: aiInterviewer.id, skills: ["React.js", "Node.js", "JavaScript"] },
     { projectId: sentry.id, skills: ["Node.js", "Express.js", "WebSockets", "Prisma", "PostgreSQL"] },
@@ -201,7 +201,7 @@ async function main() {
     }
   }
 
-  console.log("✅ Database seeded successfully");
+  console.log(" Database seeded successfully");
 }
 
 main()
