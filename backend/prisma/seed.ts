@@ -98,26 +98,8 @@ async function main() {
       links: {
         create: [
           {
-            type: "demo",
-            url: "https://ai-interviewer-rig4xa96i-vineets-projects-ef673d72.vercel.app/",
-          },
-        ],
-      },
-    },
-  });
-
-  const sentry = await prisma.project.create({
-    data: {
-      title: "URL Shortener",
-      description:
-        "Full-stack URL platform used by 20+ users generating 150+ short links. Optimized redirection logic reducing response latency by 40%. Achieved 95+ Lighthouse score with responsive UI design. Implemented CI/CD on Vercel enabling zero-downtime deployments.",
-      work: "Personal Project",
-      profileId: profile.id,
-      links: {
-        create: [
-          {
-            type: "demo",
-            url: "https://shorturl-ten-mocha.vercel.app/",
+            type: "github",
+            url: "https://github.com/saumyaprakashnarayan",
           },
         ],
       },
@@ -134,8 +116,8 @@ async function main() {
       links: {
         create: [
           {
-            type: "demo",
-            url: "https://shorturl-ten-mocha.vercel.app/",
+            type: "github",
+            url: "https://github.com/saumyaprakashnarayan",
           },
         ],
       },
@@ -153,7 +135,7 @@ async function main() {
         create: [
           {
             type: "github",
-            url: "https://github.com/saumya/crop-rotation",
+            url: "https://github.com/saumyaprakashnarayan",
           },
         ],
       },
@@ -163,7 +145,6 @@ async function main() {
 
   const projectSkillMap = [
     { projectId: aiInterviewer.id, skills: ["React.js", "Node.js", "TypeScript"] },
-    { projectId: sentry.id, skills: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "Tailwind CSS"] },
     { projectId: urlShortener.id, skills: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "Tailwind CSS"] },
     { projectId: cropRotation.id, skills: ["Python", "Machine Learning", "PostgreSQL"] },
   ];

@@ -36,29 +36,22 @@ export const mockProjects: Project[] = [
     id: "1",
     title: "AI Interviewer",
     description: "AI-powered interview simulation tool generating 500+ technical and behavioral questions. Uses Gemini API to deliver personalized feedback improving interview readiness by 25%. Implemented secure authentication and session handling with 30% reduced API latency.",
-    link: "https://github.com/saumyaprakashnarayan/ai-interviewer",
+    link: "https://github.com/saumyaprakashnarayan",
     skills: ["React.js", "Node.js", "Gemini API", "TypeScript"]
   },
   {
     id: "2",
     title: "URL Shortener",
     description: "Full-stack URL platform used by 20+ users generating 150+ short links. Optimized redirection logic reducing response latency by 40%. Achieved 95+ Lighthouse score with responsive UI design and CI/CD on Vercel.",
-    link: "https://shorturl-ten-mocha.vercel.app/",
+    link: "https://github.com/saumyaprakashnarayan",
     skills: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "Tailwind CSS"]
   },
   {
     id: "3",
     title: "Crop Rotation Detection",
     description: "Machine learning system analyzing crop rotation patterns using multi-temporal satellite imagery. Processed 1,000+ satellite images using vegetation indices (NDVI and EVI). Trained classification models achieving 85% accuracy.",
-    link: "https://github.com/saumya",
+    link: "https://github.com/saumyaprakashnarayan",
     skills: ["Python", "Machine Learning", "Satellite Imagery", "GIS"]
-  },
-  {
-    id: "4",
-    title: "VibeNet",
-    description: "Social networking application focused on real-time interaction and seamless user experience.",
-    link: "https://github.com/saumya/vibenet",
-    skills: ["Node.js", "Express.js", "MongoDB", "WebSockets"]
   }
 ];
 
