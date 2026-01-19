@@ -14,7 +14,7 @@ const PORT = parseInt(process.env.PORT || "3000", 10);
 
 app.use(cors({
   origin: (origin, callback) => {
-    const allowedOrigins = ['http://localhost:8080', 'http://localhost:8081', 'http://localhost:3000'];
+    const allowedOrigins = ['http://localhost:8080', 'http://localhost:8081', 'https://my-api-playground-lzxf.onrender.com'];
     if (!origin || allowedOrigins.includes(origin)) {
       callback(null, true);
     } else {

@@ -46,7 +46,7 @@ const Profile = () => {
     
     try {
       setLoading(true);
-      const response = await fetch('http://localhost:3000/profile', {
+      const response = await fetch('https://my-api-playground-lzxf.onrender.com/profile', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

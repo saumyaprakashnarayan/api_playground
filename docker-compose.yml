@@ -14,7 +14,7 @@ services:
     networks:
       - app-network
     healthcheck:
-      test: ["CMD", "wget", "-q", "--spider", "http://localhost:3000/health"]
+      test: ["CMD", "wget", "-q", "--spider", "https://my-api-playground-lzxf.onrender.com/health"]
       interval: 10s
       timeout: 5s
       retries: 3
